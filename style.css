@@ -6,13 +6,18 @@
 }
 
 body {
-   background-color: darkgray;
+    background: url(https://wallpapershome.com/images/pages/pic_h/1533.jpg);
 }
 
 
 #first-form {
     text-align: center;
-   
+    padding: 20px;
+    margin: 0px 20rem;
+    background: #fff7;
+    border-radius: 50px;
+    margin-top: 10rem;
+    
   }
 
 
@@ -30,8 +35,8 @@ body {
 
   h1 {
     text-align: center;
-    margin-top: 10rem;
     font-style: italic;
-    color: brown;
-    font-size: 60px;
+    font-size: 4rem;
+    text-shadow: 2px 2px crimson;
+    color: darksalmon;
   }
