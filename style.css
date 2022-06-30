@@ -12,7 +12,7 @@ body {
 
 #first-form {
     text-align: center;
-    margin-top: 15rem;
+   
   }
 
 
@@ -26,4 +26,12 @@ body {
   button {
     width: 10rem;
     margin-top: 15px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 10rem;
+    font-style: italic;
+    color: brown;
+    font-size: 60px;
   }
