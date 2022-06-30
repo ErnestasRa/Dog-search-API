@@ -1,0 +1,29 @@
+#dog-pic {
+    
+    width: 20rem;
+    height: 20rem;
+    border-radius: 20rem;
+}
+
+body {
+   background-color: darkgray;
+}
+
+
+#first-form {
+    text-align: center;
+    margin-top: 15rem;
+  }
+
+
+  #select-breed {
+    width: 20rem;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+
+  button {
+    width: 10rem;
+    margin-top: 15px;
+  }
