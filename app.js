@@ -8,39 +8,43 @@ function searchBreed() {
     .then(res => res.json())
     .then(breed => {
         let breeds = breed.message
-        for(const breed in breeds){
-            let optionElement = document.createElement('option')
-            optionElement.textContent = breed
-            selectElement.append(optionElement)
+        let breedValues = Object.values(breeds)
+        for(let breed in breeds){
+            
+            let mainBreed = breed
+            let subBreeds = breeds[breed]
+            
+            if(subBreeds.length === 0) {
+                let optionElement = document.createElement('option')
+                optionElement.textContent = mainBreed
+                optionElement.value = mainBreed
+
+                selectElement.append(optionElement)
+            } else {
+                subBreeds.map(subBreed => {
+                    let optionElement = document.createElement('option')
+                    let optionText = `${subBreed} (${mainBreed})`
+                    optionElement.textContent = optionText
+                    optionElement.value = mainBreed+'/'+subBreed
+                    
+                    selectElement.append(optionElement)
+                })
+            }
         }
-        
-    })
 
     firstForm.addEventListener('submit',(e) => {
         e.preventDefault()
         const form = e.target
         const select = form.querySelector('select').value
-    
             fetch(`https://dog.ceo/api/breed/${select}/images`)
             .then(res => res.json())
             .then(pic => {
-                
-                let randomNumber = Math.floor(Math.random() * 150)   
+                let randomNumber = Math.floor(Math.random() * 15)   
                 let picLinks = pic.message
                 imgElement.src = picLinks[randomNumber]
                 picWrapper.append(imgElement)
-               
             })
         })
-}
+})}
 
 searchBreed()
-
-// 1. Sukurti formą, kuri leidžia pasirinkti šuns veislę ir grąžina atsitiktinę tos veislės nuotrauką.
-// 2. Jeigu šuns veislė yra išvestinė (sub-breed), tai šalia ji turėtų būti atvaizduojama parašant pagrindinės veislės pavadinimą (breed) ir šalia išvestinės veislės pavainimą (sub-breed).
-// viena kategorija
-// antra kategorija
-// Bulldog (French)
-// Bulldog (English)
-// Bulldog (Boston)
-// ketvirta kategorija
